@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>处理数据</title>
+		<link rel="stylesheet" href="turnMessage.css">
+		<style type="text/css">
+		*{
+			margin: 0; 
+			padding: 0;
+			list-style: none;
+		}
+		.pos{
+			margin-bottom: 15px;
+			background: #eee
+		}	
+		</style>
+	</head>
+	<body>
+		<div id="v-turnMessageBox" class="turnMessageBox pos">
+		</div>
+
+		<script src="jquery.js" type="text/javascript" ></script>
+		<script src="turnMessage.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var data = ["lily","lucy","an","caw","namy"],
+					data_len = data.length,
+				    i = 0,
+				    t = new turnMessage();
+				var slide = setInterval(function(){					
+					if(i == data_len){
+						clearInterval(slide);
+						setTimeout(function(){
+							t.hideBox();
+						},1000);
+						
+					}else{
+						t.setHtml({
+							html : '<li>'+data[i]+'</li>'
+						});
+						i++;
+					}
+				},1000);
+				
+			});
+			
+
+		</script>
+	</body>
+</html>
