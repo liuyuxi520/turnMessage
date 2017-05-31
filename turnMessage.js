@@ -1,3 +1,8 @@
+/* TurnMessage.js  一条接一条的出现信息的过渡动画
+** auth:lyx
+** time:2017.05.31
+** 实例化时传入容器id或类名(默认存在一个id：v-turnMessageBox)，如："#idName" ,有两个公共方法：setHtml、hideBox。
+*/
 ;(function($){
 	var resetLength = 30; //消息达到指定条数时清理一次
 	var turnMessage = function(opts){
